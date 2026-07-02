@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GearRent - Equipment Listing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-dim": "#dcd8e5",
+                        "tertiary": "#7e3000",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-variant": "#e4e1ee",
+                        "neutral-text-muted": "#6B7280",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-low": "#f5f2ff",
+                        "status-pending": "#F59E0B",
+                        "outline-variant": "#c7c4d8",
+                        "surface-background": "#F9FAFB",
+                        "secondary": "#712ae2",
+                        "on-secondary": "#ffffff",
+                        "status-error": "#EF4444",
+                        "surface": "#fcf8ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary-container": "#ffd2be",
+                        "status-available": "#10B981",
+                        "neutral-text-main": "#111827",
+                        "secondary-fixed": "#eaddff",
+                        "secondary-container": "#8a4cfc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary": "#3525cd",
+                        "surface-container-highest": "#e4e1ee",
+                        "tertiary-container": "#a44100",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ecf9",
+                        "primary-container": "#4f46e5",
+                        "primary-fixed": "#e2dfff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#302f39",
+                        "surface-tint": "#4d44e3",
+                        "status-booked": "#3B82F6",
+                        "surface-container-high": "#eae6f4",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-card": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1b24",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#777587",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "h2": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        body { -webkit-tap-highlight-color: transparent; }
+        /* Hide scrollbar for horizontal scrolling but keep functionality */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-background text-on-surface antialiased min-h-screen pt-16 pb-20 md:pb-0 md:pt-24 flex flex-col items-center">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-16 z-40 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm flex items-center justify-between px-4 w-full">
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70 text-slate-600">
+<span class="material-symbols-outlined text-[24px]">menu</span>
+</button>
+<h1 class="text-indigo-600 dark:text-indigo-400 font-black tracking-tighter text-xl font-['Plus_Jakarta_Sans']">GearRent</h1>
+<button class="hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70 text-slate-600">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+</header>
+<!-- Main Content Container -->
+<main class="w-full max-w-[container-max] px-margin-mobile md:px-margin-desktop flex-1 flex flex-col gap-stack-lg mt-stack-md md:mt-0">
+<!-- Page Header & Search -->
+<div class="flex flex-col gap-stack-sm md:hidden mt-4">
+<h2 class="font-h2 text-h2 text-neutral-text-main">Find Equipment</h2>
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-neutral-text-muted">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-full border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary bg-surface-card text-on-surface font-body-md text-body-md shadow-sm outline-none transition-all" placeholder="What do you need?" type="text"/>
+</div>
+</div>
+<!-- Filter System (Pills) -->
+<div class="w-full overflow-x-auto no-scrollbar py-2 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<div class="flex items-center gap-2 w-max">
+<button class="flex items-center gap-1 px-4 py-2 rounded-full bg-surface-card border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-primary hover:text-primary transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                    Filters
+                </button>
+<button class="px-4 py-2 rounded-full bg-primary-container text-on-primary-container border border-transparent font-label-sm text-label-sm transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)] font-semibold">
+                    All
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-card border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-primary hover:text-primary transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                    Earthmoving
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-card border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-primary hover:text-primary transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                    Lifting
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-card border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-primary hover:text-primary transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                    Power Tools
+                </button>
+<button class="px-4 py-2 rounded-full bg-surface-card border border-outline-variant text-on-surface font-label-sm text-label-sm hover:border-primary hover:text-primary transition-colors shadow-[0_1px_2px_rgba(0,0,0,0.05)]">
+                    Price <span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<p class="font-body-md text-body-md text-neutral-text-muted">Showing 24 results nearby</p>
+<div class="hidden md:flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-neutral-text-muted">Sort by:</span>
+<select class="bg-transparent border-none text-on-surface font-label-md text-label-md focus:ring-0 cursor-pointer">
+<option>Distance</option>
+<option>Price: Low to High</option>
+<option>Rating</option>
+</select>
+</div>
+</div>
+<!-- Listing Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-card rounded-xl border border-surface-variant overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col group cursor-pointer relative">
+<div class="relative h-48 w-full bg-slate-100 overflow-hidden">
+<img alt="Mini Excavator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="yellow caterpillar mini excavator parked on construction site with blue sky background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmh2-jJuFkxyu6Zm7KhASLKo5TBLLCWzGtchGovC6Rk61dByThLvibh1eVQB6-1LHm7Oh52Auvj1Tq8viRxJz2qmx9wi0k5dvhEEq7xoxGaSD55Gv3Bn4nwFejsPJaEXSirIGvNlCubucjDoxkR3KTvnwdvhTs58SLI4k-nRR2E3zbh3Nvb51KEksIppgz-hYqPqU5wUe6mUfKiT5RMbypfGVfNccrX0W8w42rWnvlVVF781lSt4sWpj8jLYR93CLGZCnRPqaoykw"/>
+<div class="absolute top-3 right-3 bg-surface-card/90 backdrop-blur px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+<span class="text-neutral-text-muted text-[10px]">(124)</span>
+</div>
+<div class="absolute top-3 left-3 bg-status-available/10 text-status-available border border-status-available/20 px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase">
+                        Available
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface truncate">Cat 301.5 Mini Excavator</h3>
+<button class="text-neutral-text-muted hover:text-status-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-neutral-text-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>2.4 miles away</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full mx-1"></span>
+<span>Downtown Area</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<img alt="Owner Avatar" class="w-6 h-6 rounded-full object-cover border border-outline-variant" data-alt="portrait of smiling middle aged man in hard hat and safety vest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-nfliVk50AOg8-3n9zVLsXy1ByxSvP5SzEshQxTrY1qFfXlan5MJcW3sJraIus7xMfbOjE3ykYsFddufvy1wDKkrqpg2BdkGCTgTW62CprkmIZ-oH86JNjiqqvN341baweFkumNKwaacWEg1NkvBb_y_Iq5sGKWhIkfSLiSpb98COIOpTkc-H45o7s2A_aE1GPfrL2pjBuKuTyiRmXkbEgKccIX7T2RZSe_LhSHX_dcovyXKchuHkHA9ePlMIsKCL2tduLmwNgyY"/>
+<span class="font-body-md text-label-sm text-neutral-text-main">Listed by Bob M.</span>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-variant flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm text-neutral-text-muted">From</span>
+<div class="flex items-baseline gap-1">
+<span class="font-h3 text-h3 text-primary font-bold">$45</span>
+<span class="font-body-md text-body-md text-neutral-text-muted">/hour</span>
+</div>
+</div>
+<button class="bg-surface-card border border-primary text-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container transition-colors shadow-sm">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-card rounded-xl border border-surface-variant overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col group cursor-pointer relative">
+<div class="relative h-48 w-full bg-slate-100 overflow-hidden">
+<img alt="Concrete Mixer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="red heavy duty concrete mixer sitting on gravel surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZzin76EjPV4dQlZbH0KJ1Qc8MsNBVC7uYn_ky2feotS4z5OJlID5-VBjr_y5eLQRdqNK449RUMicqwrtO53c5ghB6ZsLiTWolhnyPXDQ0VmkxS51kREIrxPHWq4qtd5VH_u6yL2ajpXFIlOBS7hobbvOXaXVY4CHVwTkLlmXn1yZNYMcDY4NRifTOkTZk_uW3vuaKi8sXrLDdfnCQgBDyBCbCu5HLCeU09vf6AcwhFYNstSTXSLwUI46by2GkbdnTCPt0M4uTZ6E"/>
+<div class="absolute top-3 right-3 bg-surface-card/90 backdrop-blur px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+<span class="text-neutral-text-muted text-[10px]">(87)</span>
+</div>
+<div class="absolute top-3 left-3 bg-status-pending/10 text-status-pending border border-status-pending/20 px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase">
+                        Available Tomorrow
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface truncate">Heavy Duty Concrete Mixer</h3>
+<button class="text-neutral-text-muted hover:text-status-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-neutral-text-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>5.1 miles away</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full mx-1"></span>
+<span>Westside Yard</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[10px]">SC</div>
+<span class="font-body-md text-label-sm text-neutral-text-main">Listed by Smith Co.</span>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-variant flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm text-neutral-text-muted">From</span>
+<div class="flex items-baseline gap-1">
+<span class="font-h3 text-h3 text-primary font-bold">$25</span>
+<span class="font-body-md text-body-md text-neutral-text-muted">/hour</span>
+</div>
+</div>
+<button class="bg-surface-card border border-primary text-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container transition-colors shadow-sm">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-card rounded-xl border border-surface-variant overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-shadow duration-300 flex flex-col group cursor-pointer relative">
+<div class="relative h-48 w-full bg-slate-100 overflow-hidden">
+<img alt="Scissor Lift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="yellow scissor lift elevated in a warehouse setting with bright lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo8Kk5FvBLtiLhDwmfeqCbUDTnlYYFncuIyfBgO5wlJ2agYQWVhbMEGoV3O_P_dNsIMvI6KiMwZXUhAFWWwNbyBi5WVaWDuyfx5qQcI_hwDhmzLfb_QiJTEtPNmsM_8Gb9dCWVyck2On-qRjLYc_jukF46orWKqGjbQlxxWvE2yf7DQq5EtoScYuAEbFa9VRHwOqvOovMmq4efp63QFkt-kBPi3RfewX90BCLKsc-W3CTqBGfz3YKdkezDzdS6DEq-4YGHOzlBUec"/>
+<div class="absolute top-3 right-3 bg-surface-card/90 backdrop-blur px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+<span class="text-neutral-text-muted text-[10px]">(42)</span>
+</div>
+<div class="absolute top-3 left-3 bg-status-available/10 text-status-available border border-status-available/20 px-2 py-0.5 rounded text-[10px] font-bold tracking-wide uppercase">
+                        Available
+                    </div>
+</div>
+<div class="p-4 flex flex-col flex-1 gap-2">
+<div class="flex justify-between items-start gap-2">
+<h3 class="font-h3 text-h3 text-on-surface truncate">JLG 1930ES Scissor Lift</h3>
+<button class="text-neutral-text-muted hover:text-status-error transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+</div>
+<div class="flex items-center gap-1.5 text-neutral-text-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>8.0 miles away</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full mx-1"></span>
+<span>North Industrial</span>
+</div>
+<div class="flex items-center gap-2 mt-1">
+<img alt="Owner Avatar" class="w-6 h-6 rounded-full object-cover border border-outline-variant" data-alt="portrait of professional woman smiling in office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV46aPJpbLhi_t1c-QayqNZ20eOMjr5enzqc_BetD7gBAKUEQlS_iVBjehSDJT9tzIdiDKpiXoj3CoI2lkhHHHTbPX41ZBGRQdjcoBhwGLLSBvnxkEloIT5xHNUyNBX5HPeRq6YSgTeKn40gNIJFN7gqSf5eirrWJTz11q_blq5i461fMug3PE_uaDCkm8Gqa8oAXION8Qr8ObUT6WrFCbJ1pnqXoRzrPiRv7Rt6beRpi1BLM0vbmAEE7-NeUTUSl0EpPrIfK1gqQ"/>
+<span class="font-body-md text-label-sm text-neutral-text-main">Listed by Sarah T.</span>
+</div>
+<div class="mt-auto pt-4 border-t border-surface-variant flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm text-neutral-text-muted">From</span>
+<div class="flex items-baseline gap-1">
+<span class="font-h3 text-h3 text-primary font-bold">$65</span>
+<span class="font-body-md text-body-md text-neutral-text-muted">/hour</span>
+</div>
+</div>
+<button class="bg-surface-card border border-primary text-primary px-4 py-2 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container hover:border-primary-container transition-colors shadow-sm">
+                            View Details
+                        </button>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination (Simple) -->
+<div class="flex justify-center items-center gap-2 py-8 mt-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-neutral-text-muted hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-on-primary font-label-md shadow-sm">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors font-label-md">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-on-surface hover:bg-surface-variant transition-colors font-label-md">3</button>
+<span class="text-neutral-text-muted px-1">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant text-neutral-text-muted hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Map Toggle FAB -->
+<button class="fixed bottom-[88px] md:bottom-8 right-4 md:right-8 z-30 bg-secondary text-on-secondary rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200 px-6 py-4 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-label-md text-label-md tracking-wide">Map View</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full h-[64px] border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-[0_-1px_3px_rgba(0,0,0,0.05)] fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 pb-safe">
+<div class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-3 py-1 cursor-pointer active:scale-95 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Explore</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all cursor-pointer active:scale-95 duration-200 px-3 py-1">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Orders</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all cursor-pointer active:scale-95 duration-200 px-3 py-1">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Tracking</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all cursor-pointer active:scale-95 duration-200 px-3 py-1">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Inbox</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-all cursor-pointer active:scale-95 duration-200 px-3 py-1">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Owner Inventory Management - GearRent</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "surface-container": "#eaedff",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "outline-variant": "#c7c4d7",
+                      "surface-container-high": "#e2e7ff",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "inverse-primary": "#c0c1ff",
+                      "background": "#faf8ff",
+                      "tertiary": "#825100",
+                      "surface-tint": "#494bd6",
+                      "inverse-surface": "#283044",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "on-tertiary-container": "#fffbff",
+                      "surface-container-highest": "#dae2fd",
+                      "secondary-fixed": "#6ffbbe",
+                      "on-secondary-container": "#00714d",
+                      "on-secondary-fixed-variant": "#005236",
+                      "on-error-container": "#93000a",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#e1e0ff",
+                      "secondary-fixed-dim": "#4edea3",
+                      "surface-bright": "#faf8ff",
+                      "tertiary-fixed": "#ffddb8",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#2a1700",
+                      "error-container": "#ffdad6",
+                      "on-background": "#131b2e",
+                      "tertiary-container": "#a36700",
+                      "on-primary-fixed": "#07006c",
+                      "primary-container": "#6063ee",
+                      "on-surface": "#131b2e",
+                      "inverse-on-surface": "#eef0ff",
+                      "surface-dim": "#d2d9f4",
+                      "primary-fixed-dim": "#c0c1ff",
+                      "outline": "#767586",
+                      "surface-variant": "#dae2fd",
+                      "secondary": "#006c49",
+                      "primary": "#4648d4",
+                      "on-surface-variant": "#464554",
+                      "on-secondary-fixed": "#002113",
+                      "secondary-container": "#6cf8bb",
+                      "on-primary-fixed-variant": "#2f2ebe",
+                      "surface-container-low": "#f2f3ff",
+                      "surface": "#faf8ff",
+                      "on-primary-container": "#fffbff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sidebar-width": "280px",
+                      "lg": "24px",
+                      "xxl": "48px",
+                      "sm": "8px",
+                      "container-padding-mobile": "16px",
+                      "xs": "4px",
+                      "xl": "32px",
+                      "base": "8px",
+                      "container-padding-desktop": "32px",
+                      "md": "16px"
+              },
+              "fontFamily": {
+                      "h2": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "h3": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "h1": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "label-md": ["14px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- Mobile Top App Bar (From Shared Components JSON) -->
+<header class="md:hidden sticky top-0 w-full z-40 bg-white shadow-sm flex justify-between items-center h-16 px-4 max-w-full">
+<button class="text-slate-900 hover:bg-slate-50 rounded-full p-2 transition-all focus:ring-2 focus:ring-indigo-500/20">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-xl font-black text-indigo-600 tracking-tighter font-h2">GearRent</span>
+<button class="text-slate-900 hover:bg-slate-50 rounded-full p-2 transition-all focus:ring-2 focus:ring-indigo-500/20">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<!-- Desktop Navigation Drawer (From Shared Components JSON) -->
+<nav class="hidden md:flex h-screen w-[280px] fixed left-0 top-0 border-r border-slate-800 shadow-2xl flex-col py-6 bg-slate-900 text-indigo-400 font-['Plus_Jakarta_Sans'] text-sm font-medium z-50">
+<div class="text-white font-extrabold text-2xl px-6 py-8">GearRent</div>
+<!-- User Profile Header -->
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center text-white font-bold overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling man with short brown hair wearing a blue shirt against a blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVTlkCnuZv835D1DRM2BW6t3VE4H3XqHQ4WKlKqhV5FtC-jp2R2F_5toGrKLdpES_V6UmthlQhYnNLevbchJix5dwIzsswHhau9LdgPA8mH9jaLyWRs40E5XI-yS3L3MYy-5xzWz_M_DKBzbP0kFdcxJeskTkXpp3cpGY7Ibys3Zq4rOR9Av1OZNh1S66fve6aTlVeYethrXuePTkP6kVa08sCtEKx9z6KuL3Y15yPcDgFE6aepp2EHlHVEEqsLB-7rqIDD4foQoQ"/>
+</div>
+<div class="flex flex-col">
+<span class="text-white font-bold leading-tight">Alex Rivers</span>
+<span class="text-slate-400 text-xs">Asset Manager</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-1">
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800 py-3 px-6 transition-colors duration-200 cursor-pointer flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+                Dashboard
+            </a>
+<!-- ACTIVE STATE -->
+<a class="bg-indigo-600/10 text-indigo-400 border-l-4 border-indigo-500 py-3 px-6 cursor-pointer flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                Inventory
+            </a>
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800 py-3 px-6 transition-colors duration-200 cursor-pointer flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+                Bookings
+            </a>
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800 py-3 px-6 transition-colors duration-200 cursor-pointer flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">local_shipping</span>
+                Logistics
+            </a>
+</div>
+<div class="mt-auto">
+<a class="text-slate-400 hover:text-slate-100 hover:bg-slate-800 py-3 px-6 transition-colors duration-200 cursor-pointer flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[280px] w-full min-h-screen bg-background pb-xxl">
+<!-- Page Header -->
+<div class="px-container-padding-mobile md:px-container-padding-desktop pt-lg pb-md flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<div>
+<h1 class="font-h1 text-h1 text-on-background">Equipment Inventory</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage your fleet, track availability, and update listings.</p>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-5 py-3 rounded-xl flex items-center gap-2 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)] transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                Add Equipment
+            </button>
+</div>
+<!-- Toolbar: Search & Filters -->
+<div class="px-container-padding-mobile md:px-container-padding-desktop pb-lg flex flex-col md:flex-row gap-4 justify-between items-center">
+<div class="relative w-full md:w-1/3 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl pl-10 pr-4 py-3 font-body-md text-body-md focus:border-primary focus:ring-2 focus:ring-primary-fixed focus:outline-none transition-all shadow-sm" placeholder="Search by ID, name, or category..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-3 w-full md:w-auto">
+<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 hide-scrollbar w-full md:w-auto">
+<button class="bg-surface-container-highest text-on-surface font-label-sm text-label-sm px-4 py-2 rounded-full border border-transparent whitespace-nowrap">All Items</button>
+<button class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors whitespace-nowrap">Vehicles</button>
+<button class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors whitespace-nowrap">Heavy Machinery</button>
+<button class="bg-surface-container-lowest text-on-surface-variant font-label-sm text-label-sm px-4 py-2 rounded-full border border-outline-variant hover:bg-surface-container transition-colors whitespace-nowrap">Tools</button>
+</div>
+<div class="hidden sm:flex bg-surface-container rounded-xl p-1 border border-outline-variant shadow-sm ml-auto">
+<button class="p-1.5 rounded-lg bg-surface-container-lowest shadow-[0_2px_4px_rgba(0,0,0,0.05)] text-primary transition-all"><span class="material-symbols-outlined text-[20px]">grid_view</span></button>
+<button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface transition-all"><span class="material-symbols-outlined text-[20px]">view_list</span></button>
+</div>
+</div>
+</div>
+<!-- Inventory Grid -->
+<div class="px-container-padding-mobile md:px-container-padding-desktop grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-lg">
+<!-- Card 1: Available -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden flex flex-col hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 group">
+<div class="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden bg-surface-variant">
+<img alt="Excavator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Yellow construction excavator parked on a dirt lot under a clear blue sky during daytime" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfsWsLEB0geaIuMBLLRNJSnPL8XFbHMZgeqJS0IaLzTWnevsETxID8HyEF6a5_11QvCQDIe_sYyy2fHZh_PzfRxGls-Jw379CMgT_iRJi6CTS84Bskr4x2xNK5VhZ4TSuNGe3pUdUy1do25ZkRNQ2PqwBWVl6ScupF70i9gf5dtGvxlmpr_q7O9nbLAKJXZnaYkul9M_LApNvjiBa_czTpeGGbkspKeaXII9yc7aNsaSKX9lk0qDhosLtGXoL1WuCaBkspe8SXDic"/>
+<div class="absolute top-3 right-3">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm flex items-center gap-1 backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Available
+                        </span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-h3 text-h3 text-on-surface line-clamp-1">CAT 320 Excavator</h3>
+</div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">ID: EQ-8829 • Heavy Machinery</p>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-auto">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Daily Rate</p>
+<p class="font-h3 text-h3 text-primary-fixed-variant">$450<span class="font-body-md text-body-md text-outline">/day</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">In Stock</p>
+<p class="font-h3 text-h3 text-on-surface">2 <span class="font-body-md text-body-md text-outline">Units</span></p>
+</div>
+</div>
+<hr class="border-outline-variant/60 my-1"/>
+<div class="flex justify-between items-center pt-1">
+<label class="inline-flex items-center cursor-pointer group/toggle">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-outline-variant peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary-fixed rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary group-hover/toggle:shadow-sm"></div>
+<span class="ms-3 font-label-md text-label-md text-on-surface-variant select-none">Listing Active</span>
+</label>
+<button aria-label="Edit item" class="text-outline hover:text-primary hover:bg-surface-container rounded-full p-2 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">edit_square</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Rented -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden flex flex-col hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 group">
+<div class="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden bg-surface-variant">
+<img alt="Ford Transit Van" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="White cargo van parked on a paved road surrounded by green trees in a residential neighborhood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvD2sxmlJs0J6X6I555ehYCAMOE-10MrPRysqmyE_VX2F2afWdeBdhFKVm08qBTi5qp6FiErWsSzqwwKBV3QU7N-GyuyvnyJRo_qK2gL25N8SR9GlRbbpqGRSJnmdf_vlV7UtfAz6zxkkiFFBvrNlyl_aSCzyXr8xWCopGgU1Obsg8K0e3rDxcDTpwzABAzLc-KzZMXbK9PGtpqClb8Nl4ilPznn0f3vKhcO-nHPlcwq3ns7t0LkUHX0C-re_RbjbPYJcVX9zvqws"/>
+<div class="absolute top-3 right-3">
+<span class="bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm flex items-center gap-1 backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Rented Out
+                        </span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-h3 text-h3 text-on-surface line-clamp-1">Ford Transit Van 250</h3>
+</div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">ID: VH-1042 • Vehicles</p>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-auto">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center opacity-80">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Daily Rate</p>
+<p class="font-h3 text-h3 text-primary-fixed-variant">$125<span class="font-body-md text-body-md text-outline">/day</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center opacity-80">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Return Date</p>
+<p class="font-label-md text-label-md text-on-surface mt-1">Oct 24, 2023</p>
+</div>
+</div>
+<hr class="border-outline-variant/60 my-1"/>
+<div class="flex justify-between items-center pt-1">
+<label class="inline-flex items-center cursor-pointer group/toggle opacity-60">
+<input checked="" class="sr-only peer" disabled="" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+<span class="ms-3 font-label-md text-label-md text-on-surface-variant select-none">Locked (Rented)</span>
+</label>
+<button aria-label="View details" class="text-outline hover:text-primary hover:bg-surface-container rounded-full p-2 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Maintenance -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden flex flex-col hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 group">
+<div class="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden bg-surface-variant">
+<img alt="Power Generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 grayscale opacity-80" data-alt="Industrial portable power generator on a concrete floor in a well lit warehouse setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACIdqo_wO7nNIdy7Rv0HFbO4bJQbbLtsZfqbvS8RuBS6iUhQodxbE64FabfrYmA30G1at6we0lO10ox6fDzsNBXVz6XHZh8_oNJPks9OMiuoNgaya6HVLp9k5dv8vh1RZPccNJ9LBBJwadRD0QzbWbwWu5IrxJscJQXXPnbPuwECDka8DN5RN12v-aPAnkHCz5An3T4Y0S1b3jqMFjrFmbPEhgIKss_FO8R-VasmN690hwc7f3vQAybhZietirSt1eTaarON0U1No"/>
+<div class="absolute inset-0 bg-surface-variant/20"></div>
+<div class="absolute top-3 right-3 z-10">
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm flex items-center gap-1 backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-[14px]">build</span> Maintenance
+                        </span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-h3 text-h3 text-on-surface line-clamp-1 text-on-surface-variant">Honda EU3000is Gen</h3>
+</div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">ID: TL-9930 • Tools</p>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-auto">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center opacity-70">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Daily Rate</p>
+<p class="font-h3 text-h3 text-primary-fixed-variant">$65<span class="font-body-md text-body-md text-outline">/day</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-error/20 bg-error-container/10 flex flex-col justify-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Est. Completion</p>
+<p class="font-label-md text-label-md text-error mt-1">Oct 28, 2023</p>
+</div>
+</div>
+<hr class="border-outline-variant/60 my-1"/>
+<div class="flex justify-between items-center pt-1">
+<label class="inline-flex items-center cursor-pointer group/toggle">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-outline-variant peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary-fixed rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary group-hover/toggle:shadow-sm"></div>
+<span class="ms-3 font-label-md text-label-md text-on-surface-variant select-none">Listing Paused</span>
+</label>
+<button aria-label="Edit item" class="text-outline hover:text-primary hover:bg-surface-container rounded-full p-2 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">edit_square</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Available (List demo visually similar in grid) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05),0_2px_4px_-2px_rgba(0,0,0,0.05)] border border-outline-variant overflow-hidden flex flex-col hover:shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 group">
+<div class="relative aspect-[4/3] sm:aspect-video w-full overflow-hidden bg-surface-variant">
+<img alt="Drone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Professional quadcopter drone hovering mid-air against a soft sunset sky with orange and purple hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTYJn-_4YyikGplFNxiezmeKjsXcc139SfSJ9t2gAfCrdiHAfiuOoxKaqenqRJhKTZGX79A7Ro0-lHT8qKkbY_l02uuWm6q385wCEUaaWZxPmkMubYhwEun0x7bEXZ2pmGpF1-i452sumDr4_ovV38pw6yLAuwKtkAw-4I06MXV7407k3SEk-sZlQbFRtgPmLVhQOOd_59SFXImy7ZufmhVwhdBumaKAYhIy8EL6veznLiC-wQg2mfEGohqJsbq8sR2MQVnMlZIps"/>
+<div class="absolute top-3 right-3">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm flex items-center gap-1 backdrop-blur-md bg-opacity-90">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Available
+                        </span>
+</div>
+</div>
+<div class="p-lg flex flex-col flex-1 gap-4">
+<div>
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-h3 text-h3 text-on-surface line-clamp-1">DJI Mavic 3 Pro</h3>
+</div>
+<p class="font-label-sm text-label-sm text-outline tracking-wider uppercase">ID: AV-4412 • AV Equipment</p>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-auto">
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">Daily Rate</p>
+<p class="font-h3 text-h3 text-primary-fixed-variant">$150<span class="font-body-md text-body-md text-outline">/day</span></p>
+</div>
+<div class="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 flex flex-col justify-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-0.5">In Stock</p>
+<p class="font-h3 text-h3 text-on-surface">5 <span class="font-body-md text-body-md text-outline">Units</span></p>
+</div>
+</div>
+<hr class="border-outline-variant/60 my-1"/>
+<div class="flex justify-between items-center pt-1">
+<label class="inline-flex items-center cursor-pointer group/toggle">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="relative w-11 h-6 bg-outline-variant peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary-fixed rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary group-hover/toggle:shadow-sm"></div>
+<span class="ms-3 font-label-md text-label-md text-on-surface-variant select-none">Listing Active</span>
+</label>
+<button aria-label="Edit item" class="text-outline hover:text-primary hover:bg-surface-container rounded-full p-2 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">edit_square</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

@@ -1,0 +1,572 @@
+[
+  {
+    "id": "eq_1",
+    "name": "Heavy-Duty Scissor Lift 727X",
+    "category": "Scissor Lift",
+    "description": "Professional grade scissor lift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4290,
+    "pricePerDay": 27820,
+    "location": "Mumbai",
+    "rating": "4.5",
+    "reviewsCount": 106,
+    "status": "Maintenance",
+    "ownerId": "owner_11",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_2",
+    "name": "Heavy-Duty Forklift 424X",
+    "category": "Forklift",
+    "description": "Professional grade forklift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1663,
+    "pricePerDay": 38966,
+    "location": "Bengaluru",
+    "rating": "4.7",
+    "reviewsCount": 76,
+    "status": "Rented",
+    "ownerId": "owner_1",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_3",
+    "name": "Heavy-Duty Loader 825X",
+    "category": "Loader",
+    "description": "Professional grade loader for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3273,
+    "pricePerDay": 5326,
+    "location": "Mumbai",
+    "rating": "4.3",
+    "reviewsCount": 19,
+    "status": "Rented",
+    "ownerId": "owner_11",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_4",
+    "name": "Heavy-Duty Concrete Mixer 828X",
+    "category": "Concrete Mixer",
+    "description": "Professional grade concrete mixer for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3749,
+    "pricePerDay": 32826,
+    "location": "Guwahati",
+    "rating": "4.9",
+    "reviewsCount": 67,
+    "status": "Maintenance",
+    "ownerId": "owner_7",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_5",
+    "name": "Heavy-Duty Excavator 475X",
+    "category": "Excavator",
+    "description": "Professional grade excavator for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1622,
+    "pricePerDay": 7860,
+    "location": "Mumbai",
+    "rating": "4.9",
+    "reviewsCount": 39,
+    "status": "Available",
+    "ownerId": "owner_15",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_6",
+    "name": "Heavy-Duty Concrete Mixer 900X",
+    "category": "Concrete Mixer",
+    "description": "Professional grade concrete mixer for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 971,
+    "pricePerDay": 16666,
+    "location": "Kolkata",
+    "rating": "4.3",
+    "reviewsCount": 8,
+    "status": "Available",
+    "ownerId": "owner_14",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_7",
+    "name": "Heavy-Duty Dump Truck 988X",
+    "category": "Dump Truck",
+    "description": "Professional grade dump truck for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1606,
+    "pricePerDay": 16557,
+    "location": "Bengaluru",
+    "rating": "4.5",
+    "reviewsCount": 31,
+    "status": "Available",
+    "ownerId": "owner_2",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_8",
+    "name": "Heavy-Duty Scissor Lift 530X",
+    "category": "Scissor Lift",
+    "description": "Professional grade scissor lift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1566,
+    "pricePerDay": 5592,
+    "location": "Kolkata",
+    "rating": "4.9",
+    "reviewsCount": 20,
+    "status": "Rented",
+    "ownerId": "owner_13",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_9",
+    "name": "Heavy-Duty Scissor Lift 434X",
+    "category": "Scissor Lift",
+    "description": "Professional grade scissor lift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3096,
+    "pricePerDay": 12200,
+    "location": "Shillong",
+    "rating": "4.5",
+    "reviewsCount": 72,
+    "status": "Available",
+    "ownerId": "owner_17",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_10",
+    "name": "Heavy-Duty Crane 504X",
+    "category": "Crane",
+    "description": "Professional grade crane for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1236,
+    "pricePerDay": 8016,
+    "location": "Kolkata",
+    "rating": "4.5",
+    "reviewsCount": 25,
+    "status": "Maintenance",
+    "ownerId": "owner_3",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_11",
+    "name": "Heavy-Duty Dump Truck 747X",
+    "category": "Dump Truck",
+    "description": "Professional grade dump truck for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 610,
+    "pricePerDay": 22152,
+    "location": "Bengaluru",
+    "rating": "5.0",
+    "reviewsCount": 96,
+    "status": "Available",
+    "ownerId": "owner_10",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_12",
+    "name": "Heavy-Duty Dump Truck 484X",
+    "category": "Dump Truck",
+    "description": "Professional grade dump truck for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4681,
+    "pricePerDay": 22390,
+    "location": "Agartala",
+    "rating": "4.2",
+    "reviewsCount": 53,
+    "status": "Maintenance",
+    "ownerId": "owner_20",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_13",
+    "name": "Heavy-Duty Dump Truck 766X",
+    "category": "Dump Truck",
+    "description": "Professional grade dump truck for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 2940,
+    "pricePerDay": 27583,
+    "location": "Mumbai",
+    "rating": "4.5",
+    "reviewsCount": 25,
+    "status": "Maintenance",
+    "ownerId": "owner_16",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_14",
+    "name": "Heavy-Duty Crane 112X",
+    "category": "Crane",
+    "description": "Professional grade crane for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 501,
+    "pricePerDay": 26453,
+    "location": "Mumbai",
+    "rating": "4.4",
+    "reviewsCount": 62,
+    "status": "Available",
+    "ownerId": "owner_15",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_15",
+    "name": "Heavy-Duty Generator 414X",
+    "category": "Generator",
+    "description": "Professional grade generator for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1991,
+    "pricePerDay": 15229,
+    "location": "Kolkata",
+    "rating": "4.8",
+    "reviewsCount": 85,
+    "status": "Rented",
+    "ownerId": "owner_9",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_16",
+    "name": "Heavy-Duty Compactor 271X",
+    "category": "Compactor",
+    "description": "Professional grade compactor for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3037,
+    "pricePerDay": 15158,
+    "location": "Delhi",
+    "rating": "4.6",
+    "reviewsCount": 73,
+    "status": "Maintenance",
+    "ownerId": "owner_18",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_17",
+    "name": "Heavy-Duty Scissor Lift 954X",
+    "category": "Scissor Lift",
+    "description": "Professional grade scissor lift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1998,
+    "pricePerDay": 31270,
+    "location": "Silchar",
+    "rating": "4.4",
+    "reviewsCount": 86,
+    "status": "Rented",
+    "ownerId": "owner_19",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_18",
+    "name": "Heavy-Duty Crane 239X",
+    "category": "Crane",
+    "description": "Professional grade crane for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1833,
+    "pricePerDay": 10338,
+    "location": "Bengaluru",
+    "rating": "4.5",
+    "reviewsCount": 49,
+    "status": "Rented",
+    "ownerId": "owner_5",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_19",
+    "name": "Heavy-Duty Crane 388X",
+    "category": "Crane",
+    "description": "Professional grade crane for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4030,
+    "pricePerDay": 5530,
+    "location": "Silchar",
+    "rating": "4.3",
+    "reviewsCount": 53,
+    "status": "Maintenance",
+    "ownerId": "owner_12",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_20",
+    "name": "Heavy-Duty Dump Truck 808X",
+    "category": "Dump Truck",
+    "description": "Professional grade dump truck for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 2700,
+    "pricePerDay": 22353,
+    "location": "Kolkata",
+    "rating": "4.7",
+    "reviewsCount": 10,
+    "status": "Rented",
+    "ownerId": "owner_9",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_21",
+    "name": "Heavy-Duty Bulldozer 566X",
+    "category": "Bulldozer",
+    "description": "Professional grade bulldozer for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4248,
+    "pricePerDay": 15384,
+    "location": "Kolkata",
+    "rating": "4.2",
+    "reviewsCount": 19,
+    "status": "Available",
+    "ownerId": "owner_14",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_22",
+    "name": "Heavy-Duty Excavator 440X",
+    "category": "Excavator",
+    "description": "Professional grade excavator for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 2177,
+    "pricePerDay": 17479,
+    "location": "Kolkata",
+    "rating": "4.1",
+    "reviewsCount": 34,
+    "status": "Available",
+    "ownerId": "owner_13",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_23",
+    "name": "Heavy-Duty Forklift 422X",
+    "category": "Forklift",
+    "description": "Professional grade forklift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3352,
+    "pricePerDay": 31865,
+    "location": "Mumbai",
+    "rating": "4.6",
+    "reviewsCount": 14,
+    "status": "Available",
+    "ownerId": "owner_15",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_24",
+    "name": "Heavy-Duty Scissor Lift 691X",
+    "category": "Scissor Lift",
+    "description": "Professional grade scissor lift for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3912,
+    "pricePerDay": 10960,
+    "location": "Guwahati",
+    "rating": "4.8",
+    "reviewsCount": 42,
+    "status": "Rented",
+    "ownerId": "owner_4",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_25",
+    "name": "Heavy-Duty Generator 545X",
+    "category": "Generator",
+    "description": "Professional grade generator for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 3061,
+    "pricePerDay": 12325,
+    "location": "Delhi",
+    "rating": "4.1",
+    "reviewsCount": 117,
+    "status": "Maintenance",
+    "ownerId": "owner_18",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_26",
+    "name": "Heavy-Duty Generator 926X",
+    "category": "Generator",
+    "description": "Professional grade generator for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4460,
+    "pricePerDay": 14785,
+    "location": "Bengaluru",
+    "rating": "4.7",
+    "reviewsCount": 46,
+    "status": "Available",
+    "ownerId": "owner_2",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_27",
+    "name": "Heavy-Duty Crane 789X",
+    "category": "Crane",
+    "description": "Professional grade crane for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 2355,
+    "pricePerDay": 19167,
+    "location": "Agartala",
+    "rating": "4.7",
+    "reviewsCount": 33,
+    "status": "Rented",
+    "ownerId": "owner_20",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_28",
+    "name": "Heavy-Duty Compactor 520X",
+    "category": "Compactor",
+    "description": "Professional grade compactor for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 4120,
+    "pricePerDay": 35786,
+    "location": "Bengaluru",
+    "rating": "4.6",
+    "reviewsCount": 59,
+    "status": "Available",
+    "ownerId": "owner_10",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_29",
+    "name": "Heavy-Duty Bulldozer 803X",
+    "category": "Bulldozer",
+    "description": "Professional grade bulldozer for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1807,
+    "pricePerDay": 25999,
+    "location": "Silchar",
+    "rating": "4.5",
+    "reviewsCount": 25,
+    "status": "Maintenance",
+    "ownerId": "owner_19",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  },
+  {
+    "id": "eq_30",
+    "name": "Heavy-Duty Compactor 908X",
+    "category": "Compactor",
+    "description": "Professional grade compactor for construction needs. Maintained and serviced regularly.",
+    "pricePerHour": 1324,
+    "pricePerDay": 23344,
+    "location": "Kolkata",
+    "rating": "4.2",
+    "reviewsCount": 115,
+    "status": "Available",
+    "ownerId": "owner_3",
+    "image": "https://images.unsplash.com/photo-1579730538965-4f40f04f37df?auto=format&fit=crop&w=600&q=80",
+    "features": [
+      "GPS Tracking",
+      "Operator Included",
+      "Fuel Efficient"
+    ]
+  }
+]

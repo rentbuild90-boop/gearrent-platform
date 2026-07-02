@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GearRent - Equipment Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-dim": "#dcd8e5",
+                        "tertiary": "#7e3000",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-variant": "#e4e1ee",
+                        "neutral-text-muted": "#6B7280",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-low": "#f5f2ff",
+                        "status-pending": "#F59E0B",
+                        "outline-variant": "#c7c4d8",
+                        "surface-background": "#F9FAFB",
+                        "secondary": "#712ae2",
+                        "on-secondary": "#ffffff",
+                        "status-error": "#EF4444",
+                        "surface": "#fcf8ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary-container": "#ffd2be",
+                        "status-available": "#10B981",
+                        "neutral-text-main": "#111827",
+                        "secondary-fixed": "#eaddff",
+                        "secondary-container": "#8a4cfc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary": "#3525cd",
+                        "surface-container-highest": "#e4e1ee",
+                        "tertiary-container": "#a44100",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ecf9",
+                        "primary-container": "#4f46e5",
+                        "primary-fixed": "#e2dfff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#302f39",
+                        "surface-tint": "#4d44e3",
+                        "status-booked": "#3B82F6",
+                        "surface-container-high": "#eae6f4",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-card": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1b24",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#777587",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "h2": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Hide scrollbar for clean carousel */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-background text-on-surface min-h-screen pb-24 md:pb-0 font-body-md text-body-md flex flex-col md:flex-row">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-16 z-40 bg-surface-card border-b border-surface-container shadow-sm flex flex-col md:hidden transition-colors">
+<div class="flex items-center justify-between px-4 w-full h-full">
+<button class="text-on-surface-variant hover:bg-surface-container rounded-full p-2 cursor-pointer active:opacity-70 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="text-primary font-h3 text-h3 tracking-tighter">GearRent</div>
+<button class="text-on-surface-variant hover:bg-surface-container rounded-full p-2 cursor-pointer active:opacity-70 flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+</header>
+<!-- Side Navigation (Web) - Not rendered for contextual detail page, keeping focus on content -->
+<!-- Main Content Area -->
+<main class="flex-1 w-full max-w-container-max mx-auto pt-16 md:pt-margin-desktop px-0 md:px-margin-desktop flex flex-col md:flex-row gap-gutter">
+<!-- Left Column: Gallery & Details -->
+<div class="w-full md:w-2/3 flex flex-col gap-stack-lg">
+<!-- Media Gallery -->
+<div class="w-full relative bg-surface-container-low md:rounded-xl overflow-hidden aspect-[4/3] md:aspect-video group">
+<img alt="Industrial excavator" class="w-full h-full object-cover" data-alt="high quality professional photograph of a yellow industrial excavator parked on a construction site with warm morning sunlight casting long shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzuBwcfzbUo-UPOLeEj6y6nKJJjCQ8Kw7EA-IIvgMToZ92ZbzIJYLGhoFrxvcoH3n39dNlE0lgpO0NjqJG8T-3ULp6Gy44yETV7pLnJ1qPcrAS5d2eNBGiqD2fCsybLK9sqvf1jBdRC8a0kZ4_oEioUHPj1R5_KBR6-KYRDlPvJax37zgZ5ilVT9bd62yewmQkVkJgeSvQeXGIz09hoHYaFPLJmubPecxeR4we58GIBDLM_RouHuAa9Fl-vCLyrzfxl7Z5oGLQwAM"/>
+<!-- Gallery Indicators -->
+<div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-white opacity-100"></div>
+<div class="w-2 h-2 rounded-full bg-white opacity-50"></div>
+<div class="w-2 h-2 rounded-full bg-white opacity-50"></div>
+<div class="w-2 h-2 rounded-full bg-white opacity-50"></div>
+</div>
+</div>
+<div class="px-margin-mobile md:px-0 flex flex-col gap-stack-md">
+<!-- Header Info -->
+<div class="flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<h1 class="font-h2 text-h2 text-on-surface">Caterpillar 320 Hydraulic Excavator</h1>
+<div class="hidden md:flex items-center gap-1 bg-surface-container px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-md text-label-md">4.9</span>
+<span class="text-neutral-text-muted font-label-sm text-label-sm">(128)</span>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-wrap">
+<span class="inline-flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]" data-icon="category">category</span>
+                            Heavy Machinery
+                        </span>
+<span class="inline-flex items-center gap-1 bg-[#d1fae5] px-2 py-1 rounded-md font-label-sm text-label-sm text-[#065f46]">
+<span class="material-symbols-outlined text-[14px]" data-icon="check_circle">check_circle</span>
+                            Available Now
+                        </span>
+<div class="flex md:hidden items-center gap-1">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="font-label-md text-label-md">4.9</span>
+<span class="text-neutral-text-muted font-label-sm text-label-sm">(128)</span>
+</div>
+</div>
+</div>
+<!-- Structured Info Blocks -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-4">
+<!-- Specifications -->
+<div class="bg-surface-card p-6 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-surface-container">
+<h3 class="font-h3 text-h3 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="build">build</span>
+                            Specifications
+                        </h3>
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-neutral-text-muted font-body-md text-body-md">Operating Weight</span>
+<span class="font-label-md text-label-md">22,500 kg</span>
+</li>
+<li class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-neutral-text-muted font-body-md text-body-md">Engine Power</span>
+<span class="font-label-md text-label-md">117 kW (157 hp)</span>
+</li>
+<li class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-neutral-text-muted font-body-md text-body-md">Max Dig Depth</span>
+<span class="font-label-md text-label-md">6.72 m</span>
+</li>
+<li class="flex justify-between border-b border-surface-container pb-2">
+<span class="text-neutral-text-muted font-body-md text-body-md">Bucket Capacity</span>
+<span class="font-label-md text-label-md">1.19 m³</span>
+</li>
+</ul>
+</div>
+<!-- Features -->
+<div class="bg-surface-card p-6 rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-surface-container">
+<h3 class="font-h3 text-h3 mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="featured_play_list">featured_play_list</span>
+                            Key Features
+                        </h3>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant">GPS Tracking</span>
+<span class="bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant">Air Conditioning</span>
+<span class="bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant">Rear Camera</span>
+<span class="bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant">Quick Coupler</span>
+<span class="bg-surface-container px-3 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant">ROPS Cabin</span>
+</div>
+</div>
+</div>
+<!-- Description Text -->
+<div class="mt-4">
+<h3 class="font-h3 text-h3 mb-2">Description</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        The Cat 320 excavator raises the bar for efficiency and fuel economy in this size class. With the industry’s highest level of standard factory technology, a new cab focused on operator comfort, plus lower fuel and maintenance costs, the 320 will set a new pace for productivity and profit in your operation. Well-maintained and regularly serviced.
+                    </p>
+</div>
+<!-- Safety Info -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-surface-variant mt-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-status-pending text-[32px]" data-icon="warning">warning</span>
+<div>
+<h4 class="font-label-md text-label-md mb-1">Safety Requirements</h4>
+<p class="font-body-md text-body-md text-neutral-text-muted">Valid heavy machinery operator's license required. Hard hat, steel-toe boots, and high-visibility vest mandatory on site.</p>
+</div>
+</div>
+<!-- Location Map -->
+<div class="mt-6 mb-8">
+<h3 class="font-h3 text-h3 mb-4">Location</h3>
+<div class="w-full h-48 bg-surface-container rounded-xl overflow-hidden relative">
+<img alt="Map view" class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="clean minimal silver themed map interface showing street grid of Denver Colorado with a blue marker pin" data-location="Denver, Colorado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFhuH85ybY5gkOa8_rXIkaCzQQwPeqJt9WVDHZOiuFGes2ZenmiqvykuqG-2nkpHUXwKfX69LmJOdEGzcOtvCT0NrBL4X8Wh7qEg-TOjfl6tFkqysLQ3vDruhchM3rnMnS66jHLFfprEhE7atWdhkEObe_WOsMDcO5F0JYxa9qe1-6UjaW5wSMdrzH-1R2YQsJeQbr0DBOTbGRh2OfdWDWYWH4ciwUrjcLPWksqLKkjd1LI0IAWTa4qyshemVM6LtyCFUb3GwaRPc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-primary text-on-primary p-2 rounded-full shadow-lg">
+<span class="material-symbols-outlined" data-icon="location_on" data-weight="fill">location_on</span>
+</div>
+</div>
+</div>
+<p class="mt-2 font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="near_me">near_me</span>
+                        Approx. 4.2 miles away • Denver Industrial Park
+                    </p>
+</div>
+</div>
+</div>
+<!-- Right Column: Sticky Pricing & Trust -->
+<div class="w-full md:w-1/3 px-margin-mobile md:px-0">
+<div class="sticky top-[100px] flex flex-col gap-stack-md">
+<!-- Desktop Pricing Card -->
+<div class="hidden md:flex flex-col bg-surface-card p-6 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-surface-container">
+<div class="flex items-baseline gap-1 mb-4">
+<span class="font-h1 text-h1 text-primary">$45</span>
+<span class="font-body-md text-body-md text-neutral-text-muted">/ hour</span>
+</div>
+<div class="flex flex-col gap-3 mb-6">
+<div class="flex justify-between font-body-md text-body-md border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">Daily Rate</span>
+<span class="font-label-md text-label-md">$320</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">Weekly Rate</span>
+<span class="font-label-md text-label-md">$1,800</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md border-b border-surface-container pb-2">
+<span class="text-on-surface-variant">Deposit</span>
+<span class="font-label-md text-label-md">$500</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-on-primary py-4 rounded-lg font-label-md text-label-md shadow-md hover:shadow-lg transition-shadow flex items-center justify-center gap-2">
+                        Book Now
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-neutral-text-muted mt-3">You won't be charged yet</p>
+</div>
+<!-- Trust Indicators -->
+<div class="bg-surface-container-low p-5 rounded-xl border border-surface-container mb-24 md:mb-0">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-high overflow-hidden">
+<img alt="Owner Avatar" class="w-full h-full object-cover" data-alt="professional portrait of a middle aged man in a hard hat smiling warmly against a bright background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJCL_l7Rvri2EDXiLXSpf9GvnioKvpwx0yLB--FpHv2SVmLDr_GipMpyL17_pP7bd5s-WCAgUsJHOyzqoqVjLdGo9TZ_soM_egpJ8N3EE_QYtYt4KFql8GUawmYqBjO4zMDyXTagEdLdhL7pVVAZ9IoZf8Vc6r6kRYsph_CAILMJyavzREWwHEVA-8X4ytZn2K8c730dERoQksrC-4fMY-Dz1Gja910WYU7olt0nw1q-3uYVjwuaBilb5JdNLtzOpLxSZx7_5pjsc"/>
+</div>
+<div>
+<h4 class="font-label-md text-label-md">Midwest Equipment Rentals</h4>
+<div class="flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-primary text-[14px]" data-icon="verified">verified</span>
+<span class="font-label-sm text-label-sm text-primary">Verified Owner</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="bg-surface-card p-3 rounded-lg border border-surface-container text-center">
+<div class="font-h3 text-h3 text-on-surface">1.2k+</div>
+<div class="font-label-sm text-label-sm text-neutral-text-muted">Rentals</div>
+</div>
+<div class="bg-surface-card p-3 rounded-lg border border-surface-container text-center">
+<div class="font-h3 text-h3 text-on-surface">&lt; 1h</div>
+<div class="font-label-sm text-label-sm text-neutral-text-muted">Response Time</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Mobile Sticky CTA (BottomNavBar equivalent for transactional flow) -->
+<div class="fixed bottom-0 left-0 right-0 z-50 bg-surface-card border-t border-surface-container px-margin-mobile py-3 flex md:hidden justify-between items-center shadow-[0_-4px_15px_rgba(0,0,0,0.05)] pb-safe">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-h3 text-h3 text-primary">$45</span>
+<span class="font-label-sm text-label-sm text-neutral-text-muted">/ hour</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary underline" href="#">View all rates</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary px-8 py-3 rounded-lg font-label-md text-label-md shadow-md active:scale-95 transition-transform">
+            Book Now
+        </button>
+</div>
+</body></html>

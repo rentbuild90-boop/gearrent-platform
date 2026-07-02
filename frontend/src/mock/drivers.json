@@ -1,0 +1,222 @@
+[
+  {
+    "id": "driver_1",
+    "name": "Rahul Singh",
+    "email": "driver1@example.com",
+    "phone": "+91 9765703726",
+    "rating": "4.5",
+    "experience": "3 years",
+    "status": "Available",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver0"
+  },
+  {
+    "id": "driver_2",
+    "name": "Arjun Bose",
+    "email": "driver2@example.com",
+    "phone": "+91 9717299563",
+    "rating": "4.5",
+    "experience": "7 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver1"
+  },
+  {
+    "id": "driver_3",
+    "name": "Amit Reddy",
+    "email": "driver3@example.com",
+    "phone": "+91 9745039977",
+    "rating": "5.0",
+    "experience": "9 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver2"
+  },
+  {
+    "id": "driver_4",
+    "name": "Kiran Bose",
+    "email": "driver4@example.com",
+    "phone": "+91 9738794102",
+    "rating": "4.6",
+    "experience": "12 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver3"
+  },
+  {
+    "id": "driver_5",
+    "name": "Sneha Sharma",
+    "email": "driver5@example.com",
+    "phone": "+91 9741229925",
+    "rating": "4.5",
+    "experience": "11 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver4"
+  },
+  {
+    "id": "driver_6",
+    "name": "Arjun Gupta",
+    "email": "driver6@example.com",
+    "phone": "+91 9778842302",
+    "rating": "5.0",
+    "experience": "7 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver5"
+  },
+  {
+    "id": "driver_7",
+    "name": "Suresh Sharma",
+    "email": "driver7@example.com",
+    "phone": "+91 9720506852",
+    "rating": "4.6",
+    "experience": "5 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver6"
+  },
+  {
+    "id": "driver_8",
+    "name": "Suresh Das",
+    "email": "driver8@example.com",
+    "phone": "+91 9766125057",
+    "rating": "5.0",
+    "experience": "9 years",
+    "status": "Available",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver7"
+  },
+  {
+    "id": "driver_9",
+    "name": "Sneha Singh",
+    "email": "driver9@example.com",
+    "phone": "+91 9732627342",
+    "rating": "4.1",
+    "experience": "11 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver8"
+  },
+  {
+    "id": "driver_10",
+    "name": "Rahul Iyer",
+    "email": "driver10@example.com",
+    "phone": "+91 9741955813",
+    "rating": "4.2",
+    "experience": "8 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver9"
+  },
+  {
+    "id": "driver_11",
+    "name": "Sneha Sharma",
+    "email": "driver11@example.com",
+    "phone": "+91 9718072326",
+    "rating": "4.9",
+    "experience": "11 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver10"
+  },
+  {
+    "id": "driver_12",
+    "name": "Sneha Gupta",
+    "email": "driver12@example.com",
+    "phone": "+91 9769352559",
+    "rating": "4.5",
+    "experience": "13 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver11"
+  },
+  {
+    "id": "driver_13",
+    "name": "Anjali Iyer",
+    "email": "driver13@example.com",
+    "phone": "+91 9726223988",
+    "rating": "4.2",
+    "experience": "3 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver12"
+  },
+  {
+    "id": "driver_14",
+    "name": "Arjun Iyer",
+    "email": "driver14@example.com",
+    "phone": "+91 9745906039",
+    "rating": "4.5",
+    "experience": "3 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver13"
+  },
+  {
+    "id": "driver_15",
+    "name": "Vikram Gupta",
+    "email": "driver15@example.com",
+    "phone": "+91 9732987170",
+    "rating": "4.1",
+    "experience": "4 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver14"
+  },
+  {
+    "id": "driver_16",
+    "name": "Suresh Bose",
+    "email": "driver16@example.com",
+    "phone": "+91 9797016345",
+    "rating": "4.7",
+    "experience": "2 years",
+    "status": "On Job",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver15"
+  },
+  {
+    "id": "driver_17",
+    "name": "Rahul Reddy",
+    "email": "driver17@example.com",
+    "phone": "+91 9797937267",
+    "rating": "4.5",
+    "experience": "2 years",
+    "status": "Available",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver16"
+  },
+  {
+    "id": "driver_18",
+    "name": "Neha Reddy",
+    "email": "driver18@example.com",
+    "phone": "+91 9714518135",
+    "rating": "4.3",
+    "experience": "5 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver17"
+  },
+  {
+    "id": "driver_19",
+    "name": "Rahul Patel",
+    "email": "driver19@example.com",
+    "phone": "+91 9774411990",
+    "rating": "4.6",
+    "experience": "6 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver18"
+  },
+  {
+    "id": "driver_20",
+    "name": "Neha Sharma",
+    "email": "driver20@example.com",
+    "phone": "+91 9718187289",
+    "rating": "4.9",
+    "experience": "6 years",
+    "status": "Offline",
+    "assignedEquipment": null,
+    "photo": "https://i.pravatar.cc/150?u=driver19"
+  }
+]

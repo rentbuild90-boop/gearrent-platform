@@ -1,0 +1,18 @@
+[
+  {
+    "id": "notif_1",
+    "type": "booking",
+    "title": "Booking Confirmed",
+    "message": "Your booking for Excavator 500X has been confirmed.",
+    "date": "2026-06-30T10:00:00Z",
+    "read": false
+  },
+  {
+    "id": "notif_2",
+    "type": "payment",
+    "title": "Payment Received",
+    "message": "Payment of ₹15,000 received for booking book_12.",
+    "date": "2026-06-29T14:30:00Z",
+    "read": true
+  }
+]

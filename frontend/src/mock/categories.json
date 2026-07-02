@@ -1,0 +1,17 @@
+[
+  { "id": "cat_1", "name": "Excavators", "icon": "truck", "description": "Heavy equipment for digging and moving earth." },
+  { "id": "cat_2", "name": "Bulldozers", "icon": "truck", "description": "Powerful machines for pushing large quantities of soil." },
+  { "id": "cat_3", "name": "Cranes", "icon": "crane", "description": "Machines for lifting and moving heavy materials." },
+  { "id": "cat_4", "name": "Loaders", "icon": "truck", "description": "Used to move aside or load materials." },
+  { "id": "cat_5", "name": "Dump Trucks", "icon": "truck", "description": "Vehicles for transporting loose material." },
+  { "id": "cat_6", "name": "Compactors", "icon": "roller", "description": "Used to reduce the size of material such as waste biomass or soil." },
+  { "id": "cat_7", "name": "Concrete Mixers", "icon": "container", "description": "Equipment to mix cement, sand, and water." },
+  { "id": "cat_8", "name": "Generators", "icon": "zap", "description": "Portable power generators for job sites." },
+  { "id": "cat_9", "name": "Scissor Lifts", "icon": "arrow-up", "description": "Aerial work platforms." },
+  { "id": "cat_10", "name": "Forklifts", "icon": "package", "description": "Powered industrial trucks used to lift and move materials." },
+  { "id": "cat_11", "name": "Tractors", "icon": "tractor", "description": "Engineering vehicles for agriculture and construction." },
+  { "id": "cat_12", "name": "Trenchers", "icon": "hammer", "description": "Machines used to dig trenches." },
+  { "id": "cat_13", "name": "Graders", "icon": "truck", "description": "Heavy equipment with a long blade used to create a flat surface." },
+  { "id": "cat_14", "name": "Drilling Rigs", "icon": "drill", "description": "Massive structures used to drill water wells or oil wells." },
+  { "id": "cat_15", "name": "Hand Tools", "icon": "wrench", "description": "Manual or power tools for detailed work." }
+]

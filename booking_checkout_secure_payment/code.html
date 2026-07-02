@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GearRent - Book Vehicle</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-dim": "#dcd8e5",
+                        "tertiary": "#7e3000",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-variant": "#e4e1ee",
+                        "neutral-text-muted": "#6B7280",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-low": "#f5f2ff",
+                        "status-pending": "#F59E0B",
+                        "outline-variant": "#c7c4d8",
+                        "surface-background": "#F9FAFB",
+                        "secondary": "#712ae2",
+                        "on-secondary": "#ffffff",
+                        "status-error": "#EF4444",
+                        "surface": "#fcf8ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary-container": "#ffd2be",
+                        "status-available": "#10B981",
+                        "neutral-text-main": "#111827",
+                        "secondary-fixed": "#eaddff",
+                        "secondary-container": "#8a4cfc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary": "#3525cd",
+                        "surface-container-highest": "#e4e1ee",
+                        "tertiary-container": "#a44100",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ecf9",
+                        "primary-container": "#4f46e5",
+                        "primary-fixed": "#e2dfff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#302f39",
+                        "surface-tint": "#4d44e3",
+                        "status-booked": "#3B82F6",
+                        "surface-container-high": "#eae6f4",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-card": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1b24",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#777587",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "h2": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F9FAFB; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-background text-on-surface font-body-md min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-16 z-40 shadow-sm border-b border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 flex items-center justify-between px-4">
+<button class="text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70 transition-all">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<span class="text-indigo-600 dark:text-indigo-400 font-black tracking-tighter text-xl font-['Plus_Jakarta_Sans'] font-bold text-lg">GearRent</span>
+<button class="text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-4 max-w-container-max mx-auto md:px-margin-desktop grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Column: Booking Flow -->
+<div class="lg:col-span-8 space-y-stack-lg">
+<!-- Header Section -->
+<div class="space-y-stack-sm mb-stack-lg">
+<a class="inline-flex items-center text-primary font-label-md text-label-md hover:underline mb-stack-sm" href="#">
+<span class="material-symbols-outlined text-[18px] mr-1">arrow_back</span>
+                    Back to vehicle details
+                </a>
+<h1 class="font-h1 text-h1 text-on-surface">Book Equipment</h1>
+<p class="font-body-md text-body-md text-neutral-text-muted">Complete your reservation for the CAT 320 Excavator.</p>
+</div>
+<!-- Stepper -->
+<div class="flex items-center justify-between relative mb-stack-lg before:absolute before:top-1/2 before:-translate-y-1/2 before:h-[2px] before:w-full before:bg-outline-variant before:-z-10">
+<div class="flex flex-col items-center bg-surface-background px-2 relative">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-md text-label-md shadow-md shadow-primary/20">1</div>
+<span class="font-label-sm text-label-sm text-primary mt-2">Schedule</span>
+</div>
+<div class="flex flex-col items-center bg-surface-background px-2 relative">
+<div class="w-8 h-8 rounded-full bg-surface-card border-2 border-outline-variant text-neutral-text-muted flex items-center justify-center font-label-md text-label-md">2</div>
+<span class="font-label-sm text-label-sm text-neutral-text-muted mt-2">Delivery</span>
+</div>
+<div class="flex flex-col items-center bg-surface-background px-2 relative">
+<div class="w-8 h-8 rounded-full bg-surface-card border-2 border-outline-variant text-neutral-text-muted flex items-center justify-center font-label-md text-label-md">3</div>
+<span class="font-label-sm text-label-sm text-neutral-text-muted mt-2">Payment</span>
+</div>
+</div>
+<!-- Step 1: Schedule Content -->
+<section class="bg-surface-card rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.1)] p-stack-lg">
+<h2 class="font-h3 text-h3 text-on-surface mb-stack-md flex items-center">
+<span class="material-symbols-outlined text-primary mr-2">calendar_today</span>
+                    Rental Period
+                </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md mb-stack-lg">
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface">Start Date &amp; Time</label>
+<div class="relative">
+<input class="w-full rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary p-3 font-body-md text-body-md text-on-surface bg-surface" type="datetime-local" value="2024-05-20T08:00"/>
+</div>
+</div>
+<div class="space-y-stack-sm">
+<label class="font-label-md text-label-md text-on-surface">End Date &amp; Time</label>
+<div class="relative">
+<input class="w-full rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary p-3 font-body-md text-body-md text-on-surface bg-surface" type="datetime-local" value="2024-05-27T17:00"/>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 flex items-start gap-3 mb-stack-lg">
+<span class="material-symbols-outlined text-primary mt-0.5">info</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Duration: 7 Days</p>
+<p class="font-body-md text-body-md text-neutral-text-muted text-sm mt-1">Weekly rates apply automatically for rentals 7 days or longer.</p>
+</div>
+</div>
+<div class="flex justify-end pt-4 border-t border-surface-variant">
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center gap-2">
+                        Continue to Delivery
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Card -->
+<div class="lg:col-span-4 space-y-stack-lg lg:sticky lg:top-24">
+<div class="bg-surface-card rounded-xl shadow-[0_1px_3px_rgba(0,0,0,0.1)] overflow-hidden">
+<!-- Equipment Snippet -->
+<div class="p-stack-md border-b border-surface-variant flex gap-4 items-center">
+<div class="w-20 h-20 rounded-lg bg-surface-container-high overflow-hidden flex-shrink-0">
+<img alt="CAT 320 Excavator" class="w-full h-full object-cover" data-alt="Yellow CAT 320 excavator parked on a construction site with dirt mounds under clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6Pj6svw_ARs-OIHNVo_dXLYQURyPiHYU5ghGeyYgcGuVVnF0PSb1obG2F-P2ougfQgnRTbh6W1yBxMNC2QzlnOrP-BwNxFeg3lfox7-ybQrV2Kkc3LyP8pgtZyiOpGObcFbm8-QTmJAZhH_tNWFQVxn95rDB_3lUE0PeG43PFYQGfH5pF6-sNMHFdwA3qfnUgXelAu6j7qnqEQ_gXRGF-zvMrLI3NWkR-I4Kgi0A9qI_wCJBRqMwygHUlAeUn-NOImNwwhWixuf0"/>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface mb-1">CAT 320 Excavator</h3>
+<div class="flex items-center gap-1 mb-2">
+<span class="material-symbols-outlined text-status-pending text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface">4.8</span>
+<span class="font-label-sm text-label-sm text-neutral-text-muted">(124 trips)</span>
+</div>
+<span class="inline-block px-2 py-0.5 bg-status-available/10 text-status-available font-label-sm text-label-sm rounded-full">Available</span>
+</div>
+</div>
+<!-- Price Breakdown -->
+<div class="p-stack-md bg-surface-container-lowest">
+<h4 class="font-label-md text-label-md text-on-surface mb-stack-sm">Price Details</h4>
+<div class="space-y-3 mb-stack-md">
+<div class="flex justify-between items-center font-body-md text-body-md text-neutral-text-muted">
+<span>$350 × 7 days</span>
+<span>$2,450.00</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-neutral-text-muted">
+<span>Delivery Fee</span>
+<span class="text-on-surface font-medium">Pending...</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-neutral-text-muted">
+<span>Damage Waiver (Optional)</span>
+<span>$140.00</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-body-md text-neutral-text-muted">
+<span>Taxes (8%)</span>
+<span>$207.20</span>
+</div>
+</div>
+<div class="pt-stack-sm border-t border-surface-variant flex justify-between items-center">
+<span class="font-h3 text-h3 text-on-surface">Total</span>
+<span class="font-h3 text-h3 text-primary">$2,797.20</span>
+</div>
+<p class="font-label-sm text-label-sm text-neutral-text-muted mt-2 text-right">Excludes delivery fee</p>
+</div>
+</div>
+<!-- Trust Indicators -->
+<div class="flex items-start gap-3 p-4 bg-surface-container-low rounded-lg">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Secure Booking</p>
+<p class="font-label-sm text-label-sm text-neutral-text-muted mt-1">Your payment information is encrypted and secure.</p>
+</div>
+</div>
+</div>
+</main>
+</body></html>

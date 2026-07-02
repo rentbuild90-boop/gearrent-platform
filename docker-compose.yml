@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=/api
+      - DOCKER_ENV=true
+      - API_URL=http://backend:8000
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    expose:
+      - "8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - ENVIRONMENT=production
+      - DATABASE_URL=mysql+aiomysql://gearrent_user:gearrent_pass123!@mysql:3306/gearrent
+      - MYSQL_HOST=mysql
+      - MYSQL_PORT=3306
+      - MYSQL_DATABASE=gearrent
+      - MYSQL_USER=gearrent_user
+      - MYSQL_PASSWORD=gearrent_pass123!
+      - REDIS_URL=redis://redis:6379/0
+      - SECRET_KEY=generate-a-secure-secret-key-here-1234567890
+      - ALGORITHM=HS256
+    depends_on:
+      - mysql
+      - redis
+
+  mysql:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: gearrent
+      MYSQL_USER: gearrent_user
+      MYSQL_PASSWORD: gearrent_pass123!
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  redis:
+    image: redis:7.2-alpine
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  nginx:
+    image: nginx:alpine
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - frontend
+      - backend
+
+volumes:
+  mysql_data:
+  redis_data:

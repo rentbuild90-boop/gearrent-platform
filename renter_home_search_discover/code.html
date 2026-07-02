@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GearRent - Rent Industrial Equipment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#c3c0ff",
+                        "surface-dim": "#dcd8e5",
+                        "tertiary": "#7e3000",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-surface-variant": "#464555",
+                        "tertiary-fixed-dim": "#ffb695",
+                        "surface-variant": "#e4e1ee",
+                        "neutral-text-muted": "#6B7280",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "surface-container-low": "#f5f2ff",
+                        "status-pending": "#F59E0B",
+                        "outline-variant": "#c7c4d8",
+                        "surface-background": "#F9FAFB",
+                        "secondary": "#712ae2",
+                        "on-secondary": "#ffffff",
+                        "status-error": "#EF4444",
+                        "surface": "#fcf8ff",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "on-tertiary-container": "#ffd2be",
+                        "status-available": "#10B981",
+                        "neutral-text-main": "#111827",
+                        "secondary-fixed": "#eaddff",
+                        "secondary-container": "#8a4cfc",
+                        "on-primary-fixed-variant": "#3323cc",
+                        "primary": "#3525cd",
+                        "surface-container-highest": "#e4e1ee",
+                        "tertiary-container": "#a44100",
+                        "background": "#fcf8ff",
+                        "on-primary-fixed": "#0f0069",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0ecf9",
+                        "primary-container": "#4f46e5",
+                        "primary-fixed": "#e2dfff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#1b1b24",
+                        "inverse-on-surface": "#f3effc",
+                        "on-secondary-fixed": "#25005a",
+                        "on-primary-container": "#dad7ff",
+                        "inverse-surface": "#302f39",
+                        "surface-tint": "#4d44e3",
+                        "status-booked": "#3B82F6",
+                        "surface-container-high": "#eae6f4",
+                        "tertiary-fixed": "#ffdbcc",
+                        "surface-card": "#FFFFFF",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1b24",
+                        "surface-bright": "#fcf8ff",
+                        "on-primary": "#ffffff",
+                        "outline": "#777587",
+                        "on-secondary-container": "#fffbff",
+                        "on-tertiary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "stack-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "h2": ["30px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "1.2", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-background text-on-background antialiased pb-[80px] md:pb-0 pt-[64px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full h-16 z-40 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm flex items-center justify-between px-4">
+<div class="flex items-center">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70">menu</span>
+</div>
+<div class="text-indigo-600 dark:text-indigo-400 font-black tracking-tighter text-xl font-['Plus_Jakarta_Sans'] font-bold text-lg">GearRent</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full p-2 cursor-pointer active:opacity-70">notifications</span>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex flex-col gap-stack-lg">
+<!-- Promo Banner -->
+<section class="bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl p-4 flex items-center justify-between shadow-md">
+<div>
+<h2 class="font-h3 text-h3 text-white mb-1">First Rental 10% Off</h2>
+<p class="font-body-md text-body-md text-indigo-100">Use code GEARUP at checkout</p>
+</div>
+<button class="bg-white text-indigo-600 font-label-md text-label-md px-4 py-2 rounded-lg shadow-sm hover:bg-indigo-50 transition-colors">Claim</button>
+</section>
+<!-- Search Bar -->
+<section class="bg-surface-card rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.08)] p-2 flex items-center border border-outline-variant/30 mt-2">
+<div class="flex-1 flex items-center pl-4 pr-2 border-r border-outline-variant/50">
+<span class="material-symbols-outlined text-neutral-text-muted mr-3">search</span>
+<div class="flex flex-col w-full">
+<span class="font-label-sm text-label-sm text-neutral-text-main">Where</span>
+<input class="border-0 p-0 text-body-md font-body-md bg-transparent focus:ring-0 text-neutral-text-muted outline-none w-full placeholder-neutral-text-muted/60" placeholder="Search destinations" type="text"/>
+</div>
+</div>
+<div class="flex-1 flex items-center px-4">
+<div class="flex flex-col w-full">
+<span class="font-label-sm text-label-sm text-neutral-text-main">When</span>
+<span class="font-body-md text-body-md text-neutral-text-muted truncate">Add dates</span>
+</div>
+</div>
+<button class="bg-gradient-to-r from-indigo-600 to-violet-600 w-12 h-12 rounded-full flex items-center justify-center text-white flex-shrink-0 hover:shadow-lg transition-shadow">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</button>
+</section>
+<!-- Category Carousel -->
+<section class="mt-4">
+<div class="flex overflow-x-auto no-scrollbar gap-6 pb-4 -mx-margin-mobile px-margin-mobile md:mx-0 md:px-0">
+<div class="flex flex-col items-center gap-2 cursor-pointer opacity-100 border-b-2 border-primary pb-2 min-w-max">
+<span class="material-symbols-outlined text-primary text-3xl">construction</span>
+<span class="font-label-md text-label-md text-neutral-text-main">Excavators</span>
+</div>
+<div class="flex flex-col items-center gap-2 cursor-pointer text-neutral-text-muted hover:text-neutral-text-main transition-colors pb-2 min-w-max">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+<span class="font-label-md text-label-md">Trucks</span>
+</div>
+<div class="flex flex-col items-center gap-2 cursor-pointer text-neutral-text-muted hover:text-neutral-text-main transition-colors pb-2 min-w-max">
+<span class="material-symbols-outlined text-2xl">handyman</span>
+<span class="font-label-md text-label-md">Tools</span>
+</div>
+<div class="flex flex-col items-center gap-2 cursor-pointer text-neutral-text-muted hover:text-neutral-text-main transition-colors pb-2 min-w-max">
+<span class="material-symbols-outlined text-2xl">electric_bolt</span>
+<span class="font-label-md text-label-md">Generators</span>
+</div>
+<div class="flex flex-col items-center gap-2 cursor-pointer text-neutral-text-muted hover:text-neutral-text-main transition-colors pb-2 min-w-max">
+<span class="material-symbols-outlined text-2xl">agriculture</span>
+<span class="font-label-md text-label-md">Tractors</span>
+</div>
+<div class="flex flex-col items-center gap-2 cursor-pointer text-neutral-text-muted hover:text-neutral-text-main transition-colors pb-2 min-w-max">
+<span class="material-symbols-outlined text-2xl">forklift</span>
+<span class="font-label-md text-label-md">Lifts</span>
+</div>
+</div>
+</section>
+<!-- Discovery Grid -->
+<section>
+<h2 class="font-h2 text-h2 text-neutral-text-main mb-stack-md">Nearby Equipment</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="group cursor-pointer flex flex-col gap-stack-sm">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-surface-dim">
+<img alt="Yellow excavator on a construction site" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Yellow mini excavator parked on a dirt construction site with clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUdGsaTnQPf4TnaC2aIRRI46-WF3ZSCwt_ob1TqKyggqmlaezuKzHVsI_kAHYbi8RbQ9lKkIeDflauKZS-lOqs2XjhDvkMZddMN60yPn75A5XYN_HUk9noEhhvEz35fd7Tqq8WJC6HdOAOJlSSUsdH9PNeZKZVU5efEpowttGId14oZ5qU-CJuazj9QhbE-DrzOB3ndt-HYmh-VkcR5pKRTKZN_sQkyuRL_zQ2UFq7HNTfCgGDImwmYyag3--AR7ModMLtbDOK83Q"/>
+<button class="absolute top-3 right-3 text-white hover:text-red-500 transition-colors drop-shadow-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-neutral-text-main">4.9</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-label-md text-label-md text-neutral-text-main truncate pr-2">CAT 308 CR Mini Excavator</h3>
+<span class="font-label-sm text-label-sm text-neutral-text-muted whitespace-nowrap">2.4 mi</span>
+</div>
+<p class="font-body-md text-body-md text-neutral-text-muted text-sm mt-1">Available today</p>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-neutral-text-main">$45</span>
+<span class="font-body-md text-body-md text-neutral-text-muted text-sm">/ hour</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group cursor-pointer flex flex-col gap-stack-sm">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-surface-dim">
+<img alt="White flatbed truck" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Clean white commercial flatbed truck parked on asphalt road near industrial building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ2741yl9iOrc6Rg4fu1aBnM6dooVf_-IeN7WW5cpts0t-tX6_qfmMDKD0VbAEoR6QnTRYprRkguuNV34oxiGNNUeBor-ut50bpJ9Ee45zrk1K2Ern8cdY-NLahkwS8ZYxAvuu1D_2sioEYqpdOKN8lTz1Ruuy84uVkA5uDxDEPzYbfp9l8HRthWxSeDSC1-x1kCxiWDbVswh2BsGpaIOXLObJFOy-lHwiw2pt9jItHd-s8gKcb6k3hngkX9BT4Hq3Jbhk6_8tU8c"/>
+<button class="absolute top-3 right-3 text-white hover:text-red-500 transition-colors drop-shadow-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-neutral-text-main">4.7</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-label-md text-label-md text-neutral-text-main truncate pr-2">Ford F-550 Flatbed</h3>
+<span class="font-label-sm text-label-sm text-neutral-text-muted whitespace-nowrap">3.8 mi</span>
+</div>
+<p class="font-body-md text-body-md text-neutral-text-muted text-sm mt-1">Available starting Tomorrow</p>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-neutral-text-main">$60</span>
+<span class="font-body-md text-body-md text-neutral-text-muted text-sm">/ hour</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group cursor-pointer flex flex-col gap-stack-sm">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-surface-dim">
+<img alt="Industrial portable generator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Heavy duty portable industrial diesel generator on trailer parked on gravel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDozRLrjIVC-gQu3B-uShm0ik8sG1ZIWc3y697SNx_zGzYU7Sk5i3v8PBYeGEquXfqakBQNP3OU8ESejXlVTyv6cM80f22zmjbWk8lDWn7q3aBHKAgaMqAPKBUDdJ3B48JqcJFjxmGaW9F0sRz1qyvKtOSDnoSkKlTiR3SiX7LpCCqMaZdOzLJNvKjjk0PcUqutttqWSjy0al68yz46diPfdysdrAXPb8JOqd5GOCUHpCYzza2VOhxY7QwQvKtFETZy0laVs6p9u1k"/>
+<button class="absolute top-3 right-3 text-white hover:text-red-500 transition-colors drop-shadow-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-neutral-text-main">5.0</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-label-md text-label-md text-neutral-text-main truncate pr-2">Generac 20kW Diesel</h3>
+<span class="font-label-sm text-label-sm text-neutral-text-muted whitespace-nowrap">5.1 mi</span>
+</div>
+<p class="font-body-md text-body-md text-neutral-text-muted text-sm mt-1">Available today</p>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-neutral-text-main">$25</span>
+<span class="font-body-md text-body-md text-neutral-text-muted text-sm">/ hour</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group cursor-pointer flex flex-col gap-stack-sm">
+<div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-surface-dim">
+<img alt="Scissor lift" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Orange electric scissor lift elevated inside an empty warehouse building" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7UuUQRqzw73yylo5-WkbGZOfWbZm11ieT8lCqUcRo33HQny4T4Rzem3QW3UqdQmDNddljs-tEUDJhjCCzXwwrHdxtFljjSypip8I8T-RjdOIvzStKZ_6XB9BbS_jFhVdSv6X5sx-BGUG1fnXwfoV1uO_5syhjRPjuil5zmYIjGDxNiltfizghw64qVZzP9UeTb98YY7ISg_GnRo_eX7l5hj-L1Z6vPoMLR49JaaDThITb6PU6_TnHeIY5qhWbDp6gL-XXopD1iXU"/>
+<button class="absolute top-3 right-3 text-white hover:text-red-500 transition-colors drop-shadow-md">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-yellow-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-neutral-text-main">4.8</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex justify-between items-start">
+<h3 class="font-label-md text-label-md text-neutral-text-main truncate pr-2">JLG 1930ES Scissor Lift</h3>
+<span class="font-label-sm text-label-sm text-neutral-text-muted whitespace-nowrap">8.2 mi</span>
+</div>
+<p class="font-body-md text-body-md text-neutral-text-muted text-sm mt-1">Available in 2 days</p>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-label-md text-label-md text-neutral-text-main">$35</span>
+<span class="font-body-md text-body-md text-neutral-text-muted text-sm">/ hour</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Map Button -->
+<button class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-neutral-text-main text-white px-6 py-3 rounded-full font-label-md text-label-md shadow-lg flex items-center gap-2 hover:bg-black transition-colors z-30 md:bottom-8">
+<span class="font-label-md text-label-md">Show map</span>
+<span class="material-symbols-outlined text-lg">map</span>
+</button>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center px-4 pb-safe bg-white/80 dark:bg-slate-900/80 backdrop-blur-md h-[64px] border-t border-slate-200 dark:border-slate-800 shadow-[0_-1px_3px_rgba(0,0,0,0.05)] font-['Plus_Jakarta_Sans'] text-[10px] font-semibold tracking-wide">
+<!-- Explore (Active) -->
+<div class="flex flex-col items-center justify-center text-indigo-600 dark:text-indigo-400 bg-indigo-50/50 dark:bg-indigo-900/20 rounded-xl px-3 py-1 cursor-pointer active:scale-95 duration-200 hover:text-indigo-500 transition-all">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">search</span>
+<span>Explore</span>
+</div>
+<!-- Orders -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 cursor-pointer active:scale-95 duration-200 hover:text-indigo-500 transition-all">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span>Orders</span>
+</div>
+<!-- Tracking -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 cursor-pointer active:scale-95 duration-200 hover:text-indigo-500 transition-all">
+<span class="material-symbols-outlined mb-1">local_shipping</span>
+<span>Tracking</span>
+</div>
+<!-- Inbox -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 cursor-pointer active:scale-95 duration-200 hover:text-indigo-500 transition-all">
+<span class="material-symbols-outlined mb-1">mail</span>
+<span>Inbox</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 cursor-pointer active:scale-95 duration-200 hover:text-indigo-500 transition-all">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>Profile</span>
+</div>
+</nav>
+</body></html>

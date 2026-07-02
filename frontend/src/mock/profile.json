@@ -1,0 +1,10 @@
+{
+  "id": "user_1",
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "phone": "+91 9876543210",
+  "role": "renter",
+  "joinedAt": "2025-11-20",
+  "photo": "https://i.pravatar.cc/150?u=johndoe",
+  "address": "123 Main Street, Guwahati, Assam"
+}

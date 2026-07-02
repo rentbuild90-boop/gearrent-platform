@@ -1,0 +1,20 @@
+[
+  {
+    "id": "rev_1",
+    "equipmentId": "eq_1",
+    "userId": "user_1",
+    "userName": "Ravi Kumar",
+    "rating": 5,
+    "comment": "Excellent condition and very punctual delivery.",
+    "date": "2026-06-28"
+  },
+  {
+    "id": "rev_2",
+    "equipmentId": "eq_2",
+    "userId": "user_2",
+    "userName": "Neha Singh",
+    "rating": 4,
+    "comment": "Good equipment, but driver was a bit late.",
+    "date": "2026-06-25"
+  }
+]
